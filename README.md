@@ -1,5 +1,4 @@
 **WHIM**
-
 Een extra tabje in Jarvis met de naam “studentenhulp.” dit tabje heeft de naam van studenten en een opdracht waar de student bij vastloopt (rond de 10 dagen). Een andere student kan hierbij op een knop klikken en dan de student helpen met de opdracht. Als de student goed heeft geholpen krijgt de student een pluspunt. Aan het einde van de week krijgen de 3 studenten met de meeste pluspunten in elke klas 15 Community points erbij, daarna reset iedereen zijn pluspunten. Ook voegen wij nog een extra tab toe, waar je alle coaches die aanwezig zijn weergeeft. Hierbij kan je hun naam, foto en hun 3 specialiteiten qua taal zien. 
 We voegen bij de opdracht google search tips toe, waardoor je leert te googelen, als je hebt bent vergeten van de opdracht. 
 Dit project lost het probleem op meerdere manieren op inclusief andere dingen.
@@ -13,9 +12,9 @@ In studentenhulp namen van studenten met hulp nodig Inc. Opdracht en aantal plus
 Tab met aanwezige coaches (naam, foto en specificaties.) 
 Knop met hint.
 Knop om bovenaan de studentenhulp lijst staan.
-
-**Tech-stack **
 Een tekst met google tips bij de opdracht 
+
+**Tech-stack**
 •	HTML 
 •	CSS 
 •	TailwindCSS 
