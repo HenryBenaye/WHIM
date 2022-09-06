@@ -23,7 +23,6 @@ $data = new data()?>
 </body>
 <script>
     function stuck_fun() {
-        console.log()
         document.getElementById("data_stuck").innerHTML =
         "<?php foreach ($data->get_stuck_students() as $data) {
             echo $data['username'];

@@ -6,4 +6,8 @@ class data {
         global $conn;
          return $conn->query('SELECT `username` FROM students')->fetchAll();
     }
+    function get_coach_images() {
+        global $conn;
+        return $conn->query('SELECT `img_url` FROM coaches')->fetchAll();
+    }
 }
