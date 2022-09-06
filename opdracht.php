@@ -42,7 +42,7 @@ $data = new data()
                     </ul>
                     <hr class="solid mb-4 mt-4">
                     <p class="font-bold mb-4">Skilled coaches</p>
-                    <ul class="nav">
+                    <ul class="nav"> 
                         <!-- Insert coaches from database automatically -->
                         <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bas   <img src="profilepic.png" height="20" width="20"></li><br>
                         <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Josephine   <img src="profilepic.png" height="20" width="20"></li><br>
