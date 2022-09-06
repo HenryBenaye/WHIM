@@ -12,7 +12,7 @@ class data {
     }
     function status_change() {
         global $conn;
-        $query = "UPDATE students SET status = ? WHERE id = ?";
+        $query = "UPDATE stuck_students SET status = ? WHERE id = ?";
         $conn->prepare($query)->execute([]);
     }
 }
