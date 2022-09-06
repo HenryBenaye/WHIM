@@ -4,7 +4,7 @@
     <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
       <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
         <img
-          src="On-A-WHIM.jpg" 
+          src="img/On-A-WHIM.jpg"
           class="w-full"
           alt="Whim"
         />
