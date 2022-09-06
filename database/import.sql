@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS `coaches` (
     `image_url` varchar(255) NOT NULL
 );
 
-INSERT INTO coaches (username, password, email)
-    VALUES ('Ties', '940-211-3429', 'ties@bit-academy.nl');
+INSERT INTO coaches (username, image_url)
+    VALUES ('Ties', 'img/Ties_coach.png');
 
 CREATE TABLE IF NOT EXISTS `hints` (
     `hint_id` int PRIMARY KEY AUTO_INCREMENT ,
