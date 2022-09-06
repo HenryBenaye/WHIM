@@ -6,8 +6,13 @@ class data {
         global $conn;
          return $conn->query('SELECT `username` FROM students')->fetchAll();
     }
-    function get_coach_images() {
+    function get_coach() {
         global $conn;
-        return $conn->query('SELECT `img_url` FROM coaches')->fetchAll();
+        return $conn->query('SELECT username FROM coaches')->fetchAll();
+    }
+    function status_change() {
+        global $conn;
+        $query = "UPDATE students SET status = ? WHERE id = ?";
+        $conn->prepare($query)->execute([]);
     }
 }

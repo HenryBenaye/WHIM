@@ -18,10 +18,16 @@ $data = new data()?>
         <div id="data_stuck">
 
         </div>
+        <div>
+            <?php foreach ($data->get_coach() as $coach) {
+                echo $coach['username'];
+            }?>
+        </div>
     </div>
 </div>
 </body>
 <script>
+    //setTimeout(<?php //$data->status_change(1,$_GET);?>//,3000)
     function stuck_fun() {
         document.getElementById("data_stuck").innerHTML =
         "<?php foreach ($data->get_stuck_students() as $data) {
