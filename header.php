@@ -7,7 +7,7 @@
             </a>
             <div class="flex items-center lg:order-2">
             <label class="text-white" for="file">Level 22: </label>
-            <progress id="file" value="42" max="100"> 42% </progress>   
+            <progress id="file" value="32" max="100"> 32% </progress>   
             <a href="profile.php" class="flex items-center">
                 <img src="profilepic.png" height="20" width="20" class="ml-8">
             </a>
