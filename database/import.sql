@@ -20,6 +20,14 @@ CREATE TABLE IF NOT EXISTS `coaches` (
 
 INSERT INTO coaches (username, image_url)
     VALUES ('Ties', 'img/Ties_coach.png');
+INSERT INTO coaches (username, image_url)
+    VALUES ('Bob', 'img/Bob_coach.png');
+INSERT INTO coaches (username, image_url)
+    VALUES ('Fons', 'img/Fons_coach.png');
+INSERT INTO coaches (username, image_url)
+    VALUES ('Bas', 'img/Bas_coach.png');
+INSERT INTO coaches (username, image_url)
+    VALUES ('Stephan', 'img/Stephan_coach.png');
 
 CREATE TABLE IF NOT EXISTS `hints` (
     `hint_id` int PRIMARY KEY AUTO_INCREMENT ,
@@ -31,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `opdrachten` (
     `opdracht` TEXT NOT NULL
 );
 
-INSERT INTO opdracht (opdracht)
+INSERT INTO opdrachten (opdracht)
     VALUES ('Maak een database aan met de naam WHIM');
 
 INSERT INTO hints (hint)
@@ -44,8 +52,6 @@ CREATE TABLE opdrachten_hints(
     FOREIGN KEY (hint_id) REFERENCES hints(hint_id)
 );
 
-INSERT INTO opdrachten_hints (opdracht_id, hint_id)
-    VALUES (1, 1);
 
 CREATE TABLE IF NOT EXISTS `stuck_students` (
     `id` int PRIMARY KEY AUTO_INCREMENT,
