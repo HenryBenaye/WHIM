@@ -30,20 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `coaches` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `image_url` varchar(255) NOT NULL
+  `image_url` varchar(255) NOT NULL,
+	`available_days` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Gegevens worden geëxporteerd voor tabel `coaches`
 --
 
-INSERT INTO `coaches` (`id`, `username`, `image_url`) VALUES
-(1, 'Ties', 'img/Ties_coach.png'),
-(2, 'Bob', 'img/Bob_coach.png'),
-(3, 'Fons', 'img/Fons_coach.png'),
-(4, 'Bas', 'img/Bas_coach.png'),
-(5, 'Stephan', 'img/Stephan_coach.png');
-
+INSERT INTO `coaches` (`id`, `username`, `image_url`, `available_days`) VALUES
+(1, 'Ties', 'img/Ties_coach.png', 'mado'),
+(2, 'Bob', 'img/Bob_coach.png', 'madiwodovr'),
+(3, 'Fons', 'img/Fons_coach.png', 'dido'),
+(4, 'Bas', 'img/Bas_coach.png', 'vr'),
+(5, 'Stephan', 'img/Stephan_coach.png', 'ma');
 -- --------------------------------------------------------
 
 --
