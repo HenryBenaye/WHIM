@@ -12,15 +12,22 @@ $data = new data()?>
 <body>
 <div>
     <div>
-        <button class="rounded-full">
+        <button class="rounded-full" onclick="stuck_fun()">
             Ik zit vast!!
         </button>
-        <div>
-            <?php foreach ($data->get_stuck_students() as $data) {
-                  echo $data['username'];
-            };?>
+        <div id="data_stuck">
+
         </div>
     </div>
 </div>
 </body>
+<script>
+    function stuck_fun() {
+        console.log()
+        document.getElementById("data_stuck").innerHTML =
+        "<?php foreach ($data->get_stuck_students() as $data) {
+            echo $data['username'];
+        }?>"
+    }
+</script>
 </html>
