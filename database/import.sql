@@ -27,5 +27,18 @@ CREATE TABLE IF NOT EXISTS `hints` (
     `hint` TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS `opdrachten` (
+    `opdracht_id` int PRIMARY KEY AUTO_INCREMENT ,
+    `opdracht` TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `opdrachten_hints` (
+    `opdracht_id` int NOT NULL,
+    `hint_id` int NOT NULL,
+    PRIMARY KEY (`opdracht_id`, `hint_id`),
+    FOREIGN KEY (`opdracht_id`) REFERENCES `opdrachten` (`opdracht_id`),
+    FOREIGN KEY (`hint_id`) REFERENCES `hints` (`hint_id`)
+);
+
 
 
