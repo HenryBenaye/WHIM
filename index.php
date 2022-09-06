@@ -8,10 +8,7 @@
 <?php include "header.php";?>
 </head>
 <body>
-<div>
-    <div>
+    
 
-    </div>
-</div>
 </body>
 </html>
