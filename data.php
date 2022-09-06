@@ -4,11 +4,11 @@ class data {
     //Hier wordt bestaande data opgehaald van studenten die ook vast zitten
     function get_stuck_students() {
         global $conn;
-         return $conn->query('SELECT `username` FROM students')->fetchAll();
+        return $conn->query('SELECT `username` FROM students')->fetchAll();
     }
     function get_coach() {
         global $conn;
-        return $conn->query('SELECT username FROM coaches')->fetchAll();
+        return $conn->query('SELECT * FROM coaches')->fetchAll();
     }
     function status_change() {
         global $conn;
