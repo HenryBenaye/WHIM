@@ -5,7 +5,11 @@
 <meta name="description" content="Our first page">
 <meta name="keywords" content="html tutorial template">
 <script src="https://cdn.tailwindcss.com"></script>
-<?php include "header.php";?>
+<?php include "header.php";
+include "data.php";
+$data = new data()
+?>
+
 </head>
 <body>
 <div class="container p-2 mx-auto">
@@ -27,7 +31,13 @@
                 <hr class="solid mb-4 mt-4">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">Hint</button>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Studentenhulp</button>
+                <div>
+                    <?php foreach ($data->list_stuck_students() as $list) {
+                        echo $list["username"];
+                    }?>
+                </div>
             </div>
+
         </aside>
         <main role="main" class="w-1/2 px-2 border-2">
             <div class="min-h-screen" id="orders">
