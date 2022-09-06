@@ -27,11 +27,28 @@ $data = new data()
                             <p> klasgenoot</p>
                             <p> klasgenoot</p>
                     </li>
-                </ul>
-                <hr class="solid mb-4 mt-4">
+                </ul>   
+            <hr class="solid mb-4 mt-4">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">Hint</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Studentenhulp</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded"><a href="studentenhulp.php">Studentenhulp</a></button>
+            <hr class="solid mb-4 mt-4">
+                <p class="font-bold mb-4">Aanwezige coaches</p>
+                    <ul class="nav">
+                        <!-- Insert coaches from database automatically -->
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bob   <img src="profilepic.png" height="20" width="20"></li><br>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Joris   <img src="profilepic.png" height="20" width="20"></li><br>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Klaas   <img src="profilepic.png" height="20" width="20"></li><br>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Stein   <img src="profilepic.png" height="20" width="20"></li>
+                    </ul>
+                    <hr class="solid mb-4 mt-4">
+                    <p class="font-bold mb-4">Skilled coaches</p>
+                    <ul class="nav">
+                        <!-- Insert coaches from database automatically -->
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bas   <img src="profilepic.png" height="20" width="20"></li><br>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Josephine   <img src="profilepic.png" height="20" width="20"></li><br>
 
+                    </ul>
+               
             </div>
 
         </aside>
