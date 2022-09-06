@@ -15,8 +15,7 @@ INSERT INTO students (username, password, email)
 CREATE TABLE IF NOT EXISTS `coaches` (
     `id` int PRIMARY KEY AUTO_INCREMENT ,
     `username` varchar(255) NOT NULL,
-    `password` varchar(255) NOT NULL,
-    `email` varchar(255) NOT NULL
+    `image_url` varchar(255) NOT NULL
 );
 
 INSERT INTO coaches (username, password, email)
@@ -48,4 +47,9 @@ CREATE TABLE opdrachten_hints(
 INSERT INTO opdrachten_hints (opdracht_id, hint_id)
     VALUES (1, 1);
 
-
+CREATE TABLE IF NOT EXISTS `stuck_students` (
+    `id` int PRIMARY KEY AUTO_INCREMENT,
+    `username` varchar(255) NOT NULL,
+    `status` INT NOT NULL,
+    `opdracht` varchar(255) NOT NULL
+);
