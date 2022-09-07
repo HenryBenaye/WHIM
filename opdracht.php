@@ -44,7 +44,7 @@
                 <h1 class="text-4xl mt-5">4. Verwachte uitkomst</h1><br>
                 <h1 class="text-4xl mt-5">5. Nakijkcriteria</h1><br>
                 <ul class="list-decimal pl-4">
-                    <li> De goede nakijkcriteria die heel erg belangrijk is</li>
+                    <li> De goede nakijkcriteria die heel erg belangrijk is</li>    
             </ul>
             </div>
         </main>
