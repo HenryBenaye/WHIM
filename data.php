@@ -59,7 +59,7 @@ class data {
 HTML;
         }
     }
-    // Functie voor als studentenhulp op non actief staat
+    // Functie voor als studentenhulp op non-actief staat
     function delete_studenthulp($id,$status,$timestamp) {
         global $conn;
         if ($status == 0) {
@@ -96,8 +96,8 @@ HTML;
         }
         foreach ($coaches as $coach) {
             if (strpos($coach['available_days'], $checkAvailable) !== false) {
-                echo $coach['username'];
-                echo $coach['image_url'];
+                echo "<li class='inline-flex mb-4 whitespace-pre-wrap'>" . $coach['username'];
+                echo "<img src=" . $coach['image_url'] . " height='20' width='20'></li><br>";
             }
         }
     }
