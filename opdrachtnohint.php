@@ -8,8 +8,8 @@
 <?php include "header.php";
 include "data.php";
 $data = new data()
-
 ?>
+
 </head>
 <body>
 <div class="container p-2 mx-auto">
@@ -30,15 +30,16 @@ $data = new data()
                     </li>
                 </ul>   
             <hr class="solid mb-4 mt-4">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" onclick="toggleModal('modal-id')">Hint</button>
+                <button disabled class=" bg-blue-200 text-white font-bold py-2 px-4 rounded mb-4">Hint</button>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded"><a href="studentenhulp.php">Studentenhulp</a></button>
             <hr class="solid mb-4 mt-4">
                 <p class="font-bold mb-4">Aanwezige coaches</p>
                     <ul class="nav">
                         <!-- Insert coaches from database automatically -->
-                        <?php
-                            $data->availableCoach();
-                        ?>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bob   <img src="img/Bob_coach.png" height="20" width="20"></li><br>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bas   <img src="img/Bas_coach.png" height="20" width="20"></li><br>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Klaas   <img src="profilepic.png" height="20" width="20"></li><br>
+                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Stein   <img src="profilepic.png" height="20" width="20"></li>
                     </ul>
                     <hr class="solid mb-4 mt-4">
                     <p class="font-bold mb-4">Skilled coaches</p>
@@ -46,8 +47,11 @@ $data = new data()
                         <!-- Insert coaches from database automatically -->
                         <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bas   <img src="profilepic.png" height="20" width="20"></li><br>
                         <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Josephine   <img src="profilepic.png" height="20" width="20"></li><br>
+
                     </ul>
+               
             </div>
+
         </aside>
         <main role="main" class="w-1/2 px-2 border-2">
             <div class="min-h-screen" id="orders">
@@ -71,7 +75,7 @@ $data = new data()
               
                 <div class="bg-green-200 w-72 h-72">
                   <h1 class="text-4xl mt-5">"Doctype"</h1><br>
-                            <p>Een HTML-bestand begint altijd met een declaratie van het type bestand. Dit gebeurt door aan te geven wat de "doctype" is. Dit zorgt ervoor dat de browser weet dat het bestand volgens de HTML regels gelezen moet worden.</p>
+                            <p>Een html bestand begint altijd met een declaratie van het type bestand. Dit gebeurt door aan te geven wat de "doctype" is. Dit zorgt ervoor dat de browser weet dat het bestand volgens de HTML regels gelezen moet worden.</p>
 
             </div>
                 <h1 class="text-4xl mt-5">4. Verwachte uitkomst</h1><br>
@@ -80,51 +84,8 @@ $data = new data()
                     <li> De goede nakijkcriteria die heel erg belangrijk is</li>    
             </ul>
             </div>
-<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-  <div class="relative w-auto my-6 mx-auto max-w-3xl">
-    <!--content-->
-    <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-      <!--header-->
-      <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-        <h3 class="text-3xl font-semibold">
-          Je hebt een Hint nodig he 😉
-        </h3>
-        <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id')">
-          <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-            ×
-          </span>
-        </button>
-      </div>
-      <!--body-->
-      <div class="relative p-6 flex-auto">
-        <p class="my-4 text-slate-500 text-lg leading-relaxed">
-          Heb je deze keyword all geprobeerd?:<br></br> <b>KEY</b> 
-          <b>qwertyuioo</b>
-          <b>qwertyuiop</b>
-      </p
-        </p>
-      </div>
-      <!--footer-->
-      <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-        <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
         </main>
     </div>
 </div>
-
 </body>
-<script type="text/javascript">
-  function toggleModal(modalID){
-    document.getElementById(modalID).classList.toggle("hidden");
-    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
-    document.getElementById(modalID).classList.toggle("flex");
-    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
-  }
-</script>
 </html>
