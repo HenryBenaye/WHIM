@@ -7,8 +7,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <?php include "header.php";
 include "data.php";
-$data = new data()
-
+$data = new data();
 ?>
 </head>
 <body>
@@ -51,7 +50,9 @@ $data = new data()
         </aside>
         <main role="main" class="w-1/2 px-2 border-2">
             <div class="min-h-screen" id="orders">
-                <h1 class="text-4xl mt-5">1. Omschrijving</h1><br>
+                <?php
+                echo $data->get_opdracht($_GET['opdracht']);
+                ?>
                 <p class="pb-4">Als developer ga je natuurlijk mooie en coole dingen ontwikkelen. Die mooie dingen wil je aan mensen kunnen laten zien. Een goede manier om dit te doen, is door middel van een eigen website. Je gaat een webpagina maken waarin je informatie over jezelf en je projecten kan laten zien. In de komende exercises, waarvan dit de eerste is, zullen we leren hoe dit moet!</p>
                 <br><div class="bg-cyan-200 w-full h-32">
                     <ul class="ml-6">
@@ -87,7 +88,7 @@ $data = new data()
       <!--header-->
       <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
         <h3 class="text-3xl font-semibold">
-          Je hebt een Hint nodig he 😉
+          Je hebt een hint nodig hè😉
         </h3>
         <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id')">
           <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
@@ -98,9 +99,9 @@ $data = new data()
       <!--body-->
       <div class="relative p-6 flex-auto">
         <p class="my-4 text-slate-500 text-lg leading-relaxed">
-          Heb je deze keyword all geprobeerd?:<br></br> <b>KEY</b> 
-          <b>qwertyuioo</b>
-          <b>qwertyuiop</b>
+          Heb je deze keyword all geprobeerd?:<br>
+          <b id="hint_id"></b><br>
+          <b>html element</b>
       </p
         </p>
       </div>
@@ -120,11 +121,27 @@ $data = new data()
 
 </body>
 <script type="text/javascript">
-  function toggleModal(modalID){
-    document.getElementById(modalID).classList.toggle("hidden");
-    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
-    document.getElementById(modalID).classList.toggle("flex");
-    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
-  }
+    // Modal laten zien
+    function toggleModal(modalID){
+            document.getElementById(modalID).classList.toggle("hidden");
+            document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+            document.getElementById(modalID).classList.toggle("flex");
+            document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+            get_hint();
+    }
+    // Een ajax request maken om de hints op te halen en displayen
+    function get_hint() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "data.php", true);
+        xhttp.send();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("hint_id").innerHTML = "<?php echo $data->get_hint($_GET['opdracht']);?>";
+            }
+        }
+
+    }
+
+
 </script>
 </html>

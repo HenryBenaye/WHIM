@@ -26,9 +26,7 @@ $data = new data()?>
                         </thead>
     
                         <tbody class="bg-white">
-                        <?php $data->list_stuck_students();
-                            ?>
-
+                        <?php $data->list_stuck_students();?>
                         </tbody>
                     </table>
                 </div>

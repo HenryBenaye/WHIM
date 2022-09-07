@@ -4,26 +4,45 @@ require 'database_connect.php';
 class data
 {
 
-
     //Hier wordt bestaande data opgehaald van studenten die ook vast zitten
-    function get_stuck_students()
+    public function get_stuck_students()
     {
         global $conn;
         return $conn->query('SELECT `username` FROM students')->fetchAll();
     }
     // Bestaande info over coaches ophalen
-    function get_coach()
+    public function get_coach()
     {
         global $conn;
         return $conn->query('SELECT * FROM coaches')->fetchAll();
     }
-    function status_change()
+    // opdracht ophalen
+    public function get_opdracht($id) {
+        global $conn;
+        $query = $conn->prepare("SELECT opdracht FROM opdrachten WHERE id = ?");
+        $query->execute([$id]);
+        $data = $query->fetch();
+         return  <<<HTML
+                    <h1 class="text-4xl mt-5">{$data['opdracht']}</h1><br> 
+HTML;
+    }
+    // Hints ophalen
+    public function get_hint($id) {
+        global $conn;
+        $query = $conn->prepare("SELECT hints FROM opdrachten WHERE id = ?");
+        $query->execute([$id]);
+        $data = $query->fetch();
+        return $data['hints'];
+
+
+    }
+    public function status_change()
     {
         global $conn;
         $query = "UPDATE stuck_students SET status = ? WHERE id = ?";
         $conn->prepare($query)->execute([]);
     }
-    function list_stuck_students()
+    public function list_stuck_students()
     {
         global $conn;
         $data = $conn->query(
@@ -68,7 +87,7 @@ HTML;
         }
     }
     // Functie voor als studentenhulp op non-actief staat
-    function delete_studenthulp($id, $status, $timestamp)
+    public function delete_studenthulp($id, $status, $timestamp)
     {
         global $conn;
         if ($status == 0) {
@@ -80,7 +99,8 @@ HTML;
             }
         }
     }
-    function availableCoach()
+    // aanwezige coaches weergeven
+    public function availableCoach()
     {
         $coaches = $this->get_coach();
         $currentday = date('l');
@@ -115,4 +135,5 @@ HTML;
             }
         }
     }
+
 }
