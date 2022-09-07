@@ -4,7 +4,7 @@ class data {
     //Hier wordt bestaande data opgehaald van studenten die ook vast zitten
     function get_stuck_students() {
         global $conn;
-        return $conn->query('SELECT `username` FROM students')->fetchAll();
+        return conn->query('SELECT `username` FROM students')->fetchAll();
     }
     function get_coach() {
         global $conn;
@@ -56,4 +56,34 @@ class data {
 HTML;
         }
     }
+    function availableCoach() { 
+        $coaches = $this->get_coach();
+        $currentday = date('l');
+        $checkAvailable;
+        switch($currentday) 
+        {
+            case 'Monday':
+                $checkAvailable = 'ma';
+                break;
+            case 'Tuesday':
+                $checkAvailable = 'di';
+                break;
+            case 'Wednesday':
+                $checkAvailable = 'wo';
+                break;
+            case 'Thursday':
+                $checkAvailable = 'do';
+                break;
+            case 'Friday':
+                $checkAvailable = 'vr';
+                break;
+        }
+
+        foreach ($coaches as $coach) {
+            if (strpos($coach['available_days'], $checkAvailable) !== false) {
+                echo $coach['username'];
+                echo $coach['image_url'];
+            }
+        }
+    }    
 }

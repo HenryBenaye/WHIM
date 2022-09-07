@@ -84,6 +84,9 @@ $data = new data()
                     <li> De goede nakijkcriteria die heel erg belangrijk is</li>    
             </ul>
             </div>
+            <?php 
+                echo $data->availableCoach();
+            ?>
         </main>
     </div>
 </div>
