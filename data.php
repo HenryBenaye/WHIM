@@ -11,6 +11,7 @@ class data
         global $conn;
         return $conn->query('SELECT `username` FROM students')->fetchAll();
     }
+    // Bestaande info over coaches ophalen
     function get_coach()
     {
         global $conn;
@@ -25,11 +26,15 @@ class data
     function list_stuck_students()
     {
         global $conn;
-        $data = $conn->query("SELECT stuck_students.id, students.username, opdrachten.opdracht, stuck_students.status
+        $data = $conn->query(
+            "SELECT stuck_students.id, students.username, opdrachten.opdracht, stuck_students.status, 
+        date_format(created_at,'%Y-%m-%d') AS created_at 
         FROM stuck_students
-        INNER JOIN students ON stuck_students.id = students.id
-        INNER JOIN opdrachten ON stuck_students.id = opdrachten.id;")->fetchAll();
+        INNER JOIN students ON stuck_students.student_id = students.id
+        INNER JOIN opdrachten ON stuck_students.opdracht_id = opdrachten.id;"
+        )->fetchAll();
         foreach ($data as $list) {
+            $this->delete_studenthulp($list['id'], $list['status'], $list['created_at']);
             $status_html = ($list["status"] == 1) ? '<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>' : '<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Not Active</span>' ;
             echo <<<HTML
                             <tr>
@@ -62,6 +67,19 @@ class data
 HTML;
         }
     }
+    // Functie voor als studentenhulp op non-actief staat
+    function delete_studenthulp($id, $status, $timestamp)
+    {
+        global $conn;
+        if ($status == 0) {
+            $timestamp = date_create(date("Y-m-d", strtotime($timestamp)));
+            $now = date_create(date("Y-m-d"));
+            $date_diff = date_diff($now, $timestamp);
+            if ($date_diff->days >= 3) {
+                $conn->prepare("DELETE FROM stuck_students WHERE id=?")->execute([$id]);
+            }
+        }
+    }
     function availableCoach()
     {
         $coaches = $this->get_coach();
@@ -89,7 +107,7 @@ HTML;
 
                 break;
         }
-        $checkAvailable = "di";
+
         foreach ($coaches as $coach) {
             if (strpos($coach['available_days'], $checkAvailable) !== false) {
                 echo "<li class='inline-flex mb-4 whitespace-pre-wrap'>" . $coach['username'];
