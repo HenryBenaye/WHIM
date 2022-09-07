@@ -82,7 +82,7 @@ HTML;
         foreach ($coaches as $coach) {
             if (strpos($coach['available_days'], $checkAvailable) !== false) {
                 echo $coach['username'];
-                echo "<img src='" . $coach['image_url'] . "' alt='" . $coach['username'] . "'>";
+                echo $coach['image_url'];
             }
         }
     }    
