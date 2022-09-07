@@ -4,7 +4,6 @@ require 'database_connect.php';
 class data
 {
 
-
     //Hier wordt bestaande data opgehaald van studenten die ook vast zitten
     function get_stuck_students()
     {
@@ -16,6 +15,23 @@ class data
     {
         global $conn;
         return $conn->query('SELECT * FROM coaches')->fetchAll();
+    }
+    function get_opdracht($id,$hint) {
+        global $conn;
+        $query = $conn->prepare("SELECT * FROM opdrachten WHERE id = ?");
+        $query->execute([$id]);
+        $data = $query->fetch();
+         $title = <<<HTML
+                <h1 class="text-4xl mt-5">{$data['opdracht']}</h1><br>
+
+HTML;
+        $hints = <<<HTML
+          <b>{$data['hints']}</b><br>
+
+HTML;
+
+
+
     }
     function status_change()
     {
@@ -115,4 +131,5 @@ HTML;
             }
         }
     }
+
 }
