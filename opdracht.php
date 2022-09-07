@@ -8,6 +8,7 @@
 <?php include "header.php";
 include "data.php";
 $data = new data()
+
 ?>
 
 </head>
@@ -36,10 +37,9 @@ $data = new data()
                 <p class="font-bold mb-4">Aanwezige coaches</p>
                     <ul class="nav">
                         <!-- Insert coaches from database automatically -->
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bob   <img src="img/Bob_coach.png" height="20" width="20"></li><br>
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bas   <img src="img/Bas_coach.png" height="20" width="20"></li><br>
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Klaas   <img src="profilepic.png" height="20" width="20"></li><br>
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Stein   <img src="profilepic.png" height="20" width="20"></li>
+                        <?php
+                            $data->availableCoach();
+                        ?>
                     </ul>
                     <hr class="solid mb-4 mt-4">
                     <p class="font-bold mb-4">Skilled coaches</p>
@@ -75,7 +75,7 @@ $data = new data()
               
                 <div class="bg-green-200 w-72 h-72">
                   <h1 class="text-4xl mt-5">"Doctype"</h1><br>
-                            <p>Een html bestand begint altijd met een declaratie van het type bestand. Dit gebeurt door aan te geven wat de "doctype" is. Dit zorgt ervoor dat de browser weet dat het bestand volgens de HTML regels gelezen moet worden.</p>
+                            <p>Een HTML-bestand begint altijd met een declaratie van het type bestand. Dit gebeurt door aan te geven wat de "doctype" is. Dit zorgt ervoor dat de browser weet dat het bestand volgens de HTML regels gelezen moet worden.</p>
 
             </div>
                 <h1 class="text-4xl mt-5">4. Verwachte uitkomst</h1><br>
@@ -84,9 +84,7 @@ $data = new data()
                     <li> De goede nakijkcriteria die heel erg belangrijk is</li>    
             </ul>
             </div>
-            <?php 
-                echo $data->availableCoach();
-            ?>
+
         </main>
     </div>
 </div>
