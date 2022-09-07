@@ -36,10 +36,7 @@ $data = new data()
                 <p class="font-bold mb-4">Aanwezige coaches</p>
                     <ul class="nav">
                         <!-- Insert coaches from database automatically -->
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bob   <img src="img/Bob_coach.png" height="20" width="20"></li><br>
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bas   <img src="img/Bas_coach.png" height="20" width="20"></li><br>
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Klaas   <img src="profilepic.png" height="20" width="20"></li><br>
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Stein   <img src="profilepic.png" height="20" width="20"></li>
+                        <?php echo $data->availableCoach(); ?>
                     </ul>
                     <hr class="solid mb-4 mt-4">
                     <p class="font-bold mb-4">Skilled coaches</p>

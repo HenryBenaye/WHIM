@@ -12,9 +12,6 @@ $data = new data()?>
 <body>
 <div>
     <div>
-        <button class="rounded-full" onclick="stuck_fun()">
-            Ik zit vast!!
-        </button>
         <div id="data_stuck">
 
         </div>
@@ -27,7 +24,6 @@ $data = new data()?>
 </div>
 </body>
 <script>
-    //setTimeout(<?php //$data->status_change(1,$_GET);?>//,3000)
     function stuck_fun() {
         document.getElementById("data_stuck").innerHTML =
         "<?php foreach ($data->get_stuck_students() as $data) {
