@@ -39,7 +39,7 @@ CREATE TABLE `coaches` (
 -- Gegevens worden geëxporteerd voor tabel `coaches`
 --
 
-INSERT INTO `coaches` (`id`, `username`, `image_url`, `available_days`, `top_skills`) VALUES
+INSERT INTO `coaches` (`id`, `username`, `image_url`, `available_days`, `top_skill`) VALUES
 (1, 'Ties', 'img/Ties_coach.png', 'mado', 'scrum'),
 (2, 'Bob', 'img/Bob_coach.png', 'madiwodovr', 'frameworks'),
 (3, 'Fons', 'img/Fons_coach.png', 'didowo', 'ai'),
@@ -153,11 +153,6 @@ ALTER TABLE `students`
 --
 ALTER TABLE `coaches`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Nieuwe column voor `coaches`
---
-ALTER TABLE `coaches` ADD `topSkills` VARCHAR(255) NOT NULL; 
 
 --
 -- AUTO_INCREMENT voor een tabel `opdrachten`

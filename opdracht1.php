@@ -13,8 +13,8 @@ $data = new data();
 <body>
 <div class="container p-2 mx-auto">
     <div class="flex flex-row flex-wrap py-4">
-        <aside class="w-full sm:w-1/3 md:w-1/4 px-2 border-2 m-4 mt-0">
-            <div class="sticky top-0 p-4 bg-white rounded-xl w-full">
+        <aside class="w-full md:w-1/4 px-2 border-2 rounded m-4 mt-0">
+            <div class="sticky p-4 rounded-xl w-full">
                 <ul class="nav flex flex-col overflow-hidden">
                     <li class="nav-item">
                         <p class="font-bold mb-2">Team</p>
@@ -43,8 +43,9 @@ $data = new data();
                     <p class="font-bold mb-4">Skilled coaches</p>
                     <ul class="nav"> 
                         <!-- Insert coaches from database automatically -->
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Bas   <img src="profilepic.png" height="20" width="20"></li><br>
-                        <li class="nav-item inline-flex mb-4 whitespace-pre-wrap">Josephine   <img src="profilepic.png" height="20" width="20"></li><br>
+                        <?php
+                            $data->skilledCoach();
+                        ?>
                     </ul>
             </div>
         </aside>

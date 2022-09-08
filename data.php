@@ -17,7 +17,8 @@ class data
         return $conn->query('SELECT * FROM coaches')->fetchAll();
     }
     // opdracht ophalen
-    public function get_opdracht($id) {
+    public function get_opdracht($id)
+    {
         global $conn;
         $query = $conn->prepare("SELECT opdracht FROM opdrachten WHERE id = ?");
         $query->execute([$id]);
@@ -27,14 +28,13 @@ class data
 HTML;
     }
     // Hints ophalen
-    public function get_hint($id) {
+    public function get_hint($id)
+    {
         global $conn;
         $query = $conn->prepare("SELECT hints FROM opdrachten WHERE id = ?");
         $query->execute([$id]);
         $data = $query->fetch();
         return $data['hints'];
-
-
     }
     public function status_change()
     {
@@ -136,4 +136,15 @@ HTML;
         }
     }
 
+    public function skilledCoach()
+    {
+        $excersizeSkill = "front-end";
+        $coaches = $this->get_coach();
+        foreach ($coaches as $coach) {
+            if ($coach['top_skill'] == $excersizeSkill) {
+                echo "<li class='inline-flex mb-4 whitespace-pre-wrap'>" . $coach['username'];
+                echo "<img src=" . $coach['image_url'] . " height='20' width='20'></li><br>";
+            }
+        }
+    }
 }
