@@ -40,9 +40,9 @@ CREATE TABLE `coaches` (
 --
 
 INSERT INTO `coaches` (`id`, `username`, `image_url`, `available_days`, `top_skill`) VALUES
-(1, 'Ties', 'img/Ties_coach.png', 'mado', 'scrum'),
+(1, 'Ties', 'img/Ties_coach.png', 'ma', 'scrum'),
 (2, 'Bob', 'img/Bob_coach.png', 'madiwodovr', 'frameworks'),
-(3, 'Fons', 'img/Fons_coach.png', 'didowo', 'ai'),
+(3, 'Fons', 'img/Fons_coach.png', 'diwo', 'ai'),
 (4, 'Bas', 'img/Bas_coach.png', 'vr', 'git-bash'),
 (5, 'Stephan', 'img/Stephan_coach.png', 'ma', 'front-end'),
 (6, 'Thomas', 'img/Thomas_coach.png', 'do', 'Linux'),
