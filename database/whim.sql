@@ -31,19 +31,22 @@ CREATE TABLE `coaches` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `image_url` varchar(255) NOT NULL,
-  `available_days` varchar(255) DEFAULT NULL
+  `available_days` varchar(255) DEFAULT NULL,
+  `top_skill` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `coaches`
 --
 
-INSERT INTO `coaches` (`id`, `username`, `image_url`, `available_days`) VALUES
-(1, 'Ties', 'img/Ties_coach.png', 'mado'),
-(2, 'Bob', 'img/Bob_coach.png', 'madiwodovr'),
-(3, 'Fons', 'img/Fons_coach.png', 'didowo'),
-(4, 'Bas', 'img/Bas_coach.png', 'vr'),
-(5, 'Stephan', 'img/Stephan_coach.png', 'ma');
+INSERT INTO `coaches` (`id`, `username`, `image_url`, `available_days`, `top_skill`) VALUES
+(1, 'Ties', 'img/Ties_coach.png', 'ma', 'scrum'),
+(2, 'Bob', 'img/Bob_coach.png', 'madiwodovr', 'frameworks'),
+(3, 'Fons', 'img/Fons_coach.png', 'diwo', 'ai'),
+(4, 'Bas', 'img/Bas_coach.png', 'vr', 'git-bash'),
+(5, 'Stephan', 'img/Stephan_coach.png', 'ma', 'front-end'),
+(6, 'Thomas', 'img/Thomas_coach.png', 'do', 'Linux'),
+(7, 'Joris', 'img/Joris_coach.png', 'do', 'Laravel');
 
 -- --------------------------------------------------------
 
