@@ -30,7 +30,9 @@ $data = new data();
                 </ul>   
             <hr class="solid mb-4 mt-4">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" onclick="toggleModal('modal-id')">Hint</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded"><a href="studentenhulp.php">Studentenhulp</a></button>
+                <form action="data.php" method="post">
+                    <input  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded" value="Ik zit vast">
+                </form>
             <hr class="solid mb-4 mt-4">
                 <p class="font-bold mb-4">Aanwezige coaches</p>
                     <ul class="nav">

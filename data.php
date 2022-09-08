@@ -1,9 +1,20 @@
 <?php
-
 require 'database_connect.php';
+$data = new data();
+
+if (isset($_POST['login_email'])){
+    $data->login($_POST['login_email'],$_POST['login_password']);
+
+}
 class data
 {
-
+    public function login($email,$password) {
+        global $conn;
+       $query = $conn->prepare("SELECT id, email, password FROM students WHERE email = ? AND password = ?");
+       $query->execute([$email,$password]);
+       $data = $query->fetch();
+       return array($data['id'],$data['email'],$data['password']);
+    }
     //Hier wordt bestaande data opgehaald van studenten die ook vast zitten
     public function get_stuck_students()
     {
@@ -33,8 +44,6 @@ HTML;
         $query->execute([$id]);
         $data = $query->fetch();
         return $data['hints'];
-
-
     }
     public function status_change()
     {
@@ -135,5 +144,10 @@ HTML;
             }
         }
     }
+    public function update_stuck_students() {
+        global $conn;
+        $query = "INSERT INTO stuck_students (status, student_id, opdracht_id) VALUES (?,?,?)";
+        $conn->prepare($query)->execute([1, $_SESSION['student'], $_SESSION['opdracht']]);
 
+    }
 }
