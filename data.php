@@ -60,7 +60,7 @@ HTML;
         date_format(created_at,'%Y-%m-%d') AS created_at 
         FROM stuck_students
         INNER JOIN students ON stuck_students.student_id = students.id
-        INNER JOIN opdrachten ON stuck_students.opdracht_id = opdrachten.id;"
+        INNER JOIN opdrachten ON stuck_students.opdracht_id = opdrachten.id ORDER BY id DESC;"
         )->fetchAll();
         foreach ($data as $list) {
             $this->delete_studenthulp($list['id'], $list['status'], $list['created_at']);
@@ -90,7 +90,7 @@ HTML;
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">Owner</td>
     
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Studentenhulp</a>
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Helpen</a>
                                 </td>
                             </tr>
 HTML;
