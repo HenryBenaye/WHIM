@@ -155,9 +155,6 @@ ALTER TABLE `coaches`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Nieuwe column voor `coaches`
---
-ALTER TABLE `coaches` ADD `topSkills` VARCHAR(255) NOT NULL; 
 
 --
 -- AUTO_INCREMENT voor een tabel `opdrachten`
