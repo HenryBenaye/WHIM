@@ -2,7 +2,6 @@
 session_start();
 include "header.php"; include "data.php";
 $data = new data();
-echo $_SESSION['student_id'];
 ?>
 <head>
 <title>Whim</title>
