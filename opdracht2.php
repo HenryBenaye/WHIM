@@ -30,7 +30,7 @@
                 </ul>
                 <hr class="solid mb-4 mt-4">
                 <button disabled class="bg-blue-300 text-white font-bold py-2 px-4 rounded disabled mb-4" onclick="toggleModal('modal-id')">Hint</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded"><a href="studentenhulp.php">Studentenhulp</a></button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded"><a href="studentenhulp.php">Ik zit vast</a></button>
                 <hr class="solid mb-4 mt-4">
                 <p class="font-bold mb-4">Aanwezige coaches</p>
                 <ul class="nav">
