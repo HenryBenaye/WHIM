@@ -1,10 +1,8 @@
 <?php
 require 'database_connect.php';
 $data = new data();
-
-if (isset($_POST['login_email'])){
-    $data->login($_POST['login_email'],$_POST['login_password']);
-
+if (isset($_POST['opdracht'])){
+    $data->update_stuck_students();
 }
 class data
 {
@@ -147,7 +145,8 @@ HTML;
     public function update_stuck_students() {
         global $conn;
         $query = "INSERT INTO stuck_students (status, student_id, opdracht_id) VALUES (?,?,?)";
-        $conn->prepare($query)->execute([1, $_SESSION['student'], $_SESSION['opdracht']]);
+        $conn->prepare($query)->execute([1, $_POST['student'] , $_POST['opdracht']]);
+        header("Location: StudentenHulp.php");
 
     }
 }
