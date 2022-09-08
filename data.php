@@ -36,6 +36,7 @@ HTML;
         $data = $query->fetch();
         return $data['hints'];
     }
+    
     public function status_change()
     {
         global $conn;
