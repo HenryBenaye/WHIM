@@ -11,6 +11,9 @@
             <a href="profile.php" class="flex items-center">
                 <img src="profilepic.png" height="20" width="20" class="ml-8">
             </a>
+            <a href="logout.php" class="flex items-center">
+                Log uit
+            </a>
             </div>
             <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                 <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
@@ -43,4 +46,4 @@
             </div>
         </div>
     </nav>
-</header>   
+</header>

@@ -1,9 +1,18 @@
 <?php
-
 require 'database_connect.php';
+$data = new data();
+if (isset($_POST['opdracht'])){
+    $data->update_stuck_students();
+}
 class data
 {
-
+    public function login($email,$password) {
+        global $conn;
+       $query = $conn->prepare("SELECT id, email, password FROM students WHERE email = ? AND password = ?");
+       $query->execute([$email,$password]);
+       $data = $query->fetch();
+       return array($data['id'],$data['email'],$data['password']);
+    }
     //Hier wordt bestaande data opgehaald van studenten die ook vast zitten
     public function get_stuck_students()
     {
@@ -136,7 +145,13 @@ HTML;
             }
         }
     }
-
+    public function update_stuck_students()
+    {
+        global $conn;
+        $query = "INSERT INTO stuck_students (status, student_id, opdracht_id) VALUES (?,?,?)";
+        $conn->prepare($query)->execute([1, $_POST['student'], $_POST['opdracht']]);
+        header("Location: StudentenHulp.php");
+    }
     public function skilledCoach()
     {
         $excersizeSkill = "front-end";
@@ -147,5 +162,6 @@ HTML;
                 echo "<img src=" . $coach['image_url'] . " height='20' width='20'></li><br>";
             }
         }
+
     }
 }

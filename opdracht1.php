@@ -1,3 +1,10 @@
+<?php
+session_start();
+include "header.php";
+include "data.php";
+$data = new data();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +12,7 @@
 <meta name="description" content="Our first page">
 <meta name="keywords" content="html tutorial template">
 <script src="https://cdn.tailwindcss.com"></script>
-<?php include "header.php";
-include "data.php";
-$data = new data();
-?>
+
 </head>
 <body>
 <div class="container p-2 mx-auto">
@@ -30,7 +34,11 @@ $data = new data();
                 </ul>   
             <hr class="solid mb-4 mt-4">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" onclick="toggleModal('modal-id')">Hint</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded"><a href="studentenhulp.php">Studentenhulp</a></button>
+                <form action="data.php" method="post">
+                    <input type="hidden" name="opdracht" value="1">
+                    <input type="hidden" name="student" value=<?php echo $_SESSION['student_id']?>>
+                    <input name="submit" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded" value="Ik zit vast">
+                </form>
             <hr class="solid mb-4 mt-4">
                 <p class="font-bold mb-4">Aanwezige coaches</p>
                     <ul class="nav">
@@ -102,7 +110,6 @@ $data = new data();
         <p class="my-4 text-slate-500 text-lg leading-relaxed">
           Heb je deze keyword all geprobeerd?:<br>
           <b id="hint_id"></b><br>
-          <b>html element</b>
       </p
         </p>
       </div>

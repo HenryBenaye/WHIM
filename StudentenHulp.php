@@ -1,11 +1,14 @@
-
-    <head>
+<?php
+session_start();
+include "header.php"; include "data.php";
+$data = new data();
+?>
+<head>
 <title>Whim</title>
 <meta name="description" content="Our first page">
 <meta name="keywords" content="html tutorial template">
 <script src="https://cdn.tailwindcss.com"></script>
-<?php include "header.php"; include "data.php";
-$data = new data()?>
+
 </head>
     <div class="mt-8">
         
